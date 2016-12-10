@@ -42,18 +42,18 @@
                 <button onclick="disconnectAll()">DisconnectAll</button><br><br>
             </div>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="..\platforms\android\assets\www\cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
             
-            var host = "192.168.2.11",
+            var host = "127.0.0.1",
             data = "-- data to be sent --",
             key = "";
             
             function stub(d) {
             	console.log(d);
-            }
+            
         
         function onConnect(k) {
 			alert('ESTABLECIENDO');
