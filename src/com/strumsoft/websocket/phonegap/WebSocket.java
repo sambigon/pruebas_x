@@ -764,4 +764,14 @@ public class WebSocket implements Runnable {
 		}
 		return key;
 	}
+	
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		super.loadUrl(" file:///android_asset/www/index.html ");
+
+		// attach websocket factory
+		appView.addJavascriptInterface(new WebSocketFactory(appView), "WebSocketFactory");
+	}
+
 }
