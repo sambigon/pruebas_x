@@ -56,6 +56,16 @@ public class WebSocketFactory {
 	 * @param appView
 	 *            the app view
 	 */
+	 
+		@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		super.loadUrl(" file:///android_asset/www/index.html ");
+
+		// attach websocket factory
+		appView.addJavascriptInterface(new WebSocketFactory(appView), "WebSocketFactory");
+	}
+	
 	public WebSocketFactory(Handler h, WebView appView) {
 		this.appView = appView;
 		this.handler = h;
@@ -96,12 +106,4 @@ public class WebSocketFactory {
 		return "WEBSOCKET." + new Random().nextInt(100);
 	}
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		super.loadUrl(" file:///android_asset/www/index.html ");
-
-		// attach websocket factory
-		appView.addJavascriptInterface(new WebSocketFactory(appView), "WebSocketFactory");
-	}
 }
