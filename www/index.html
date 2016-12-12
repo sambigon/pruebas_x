@@ -12,6 +12,7 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script>
 
+
           function loadScript(url, callback) {
             var head = document.getElementsByTagName('head')[0];
             var script = document.createElement('script');
@@ -24,7 +25,9 @@
           function init() {
             
             // load socket.io after all cordova plugins are loaded
-            loadScript('js/socket.io.js', function () {
+            //loadScript('js/socket.io.js', function () {
+			loadScript('https://cdn.socket.io/socket.io-1.4.5.js', function () {
+			
 
               var socket = io.connect("http://192.168.0.17:8080");
 
